@@ -29,7 +29,7 @@ public class PPApplication extends Application
       root.getChildren().add(canvas);
 
       //Set scene
-      Scene scene = new Scene(root, 500, 500);//sets up window 
+      Scene scene = new Scene(root, 800, 800);//sets up window 
       stage.setScene(scene);
       stage.setTitle("Puzzle Project Application");
       stage.show();
