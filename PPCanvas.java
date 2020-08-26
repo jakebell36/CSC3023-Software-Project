@@ -34,8 +34,8 @@ public class PPCanvas extends Canvas
    {
       level = new PPLevel(levelName);
 
-      setWidth(500);//set width
-      setHeight(500);//set heigth
+      setWidth(800);//set width
+      setHeight(800);//set heigth
       draw(gc);//run draw method
       
       //x and y variables for player
@@ -47,28 +47,60 @@ public class PPCanvas extends Canvas
       
       draw(gc);
    }
-   
+      /*
+      //Creating an image 
+      Image image = new Image(new FileInputStream("Brick.jpg"));  
+      
+      //Setting the image view 
+      ImageView imageView = new ImageView(image); 
+      
+      //Setting the position of the image 
+      imageView.setX(50); 
+      imageView.setY(25); 
+      
+      //setting the fit height and width of the image view 
+      imageView.setFitHeight(455); 
+      imageView.setFitWidth(500); 
+      
+      //Setting the preserve ratio of the image view 
+      imageView.setPreserveRatio(true);  
+      
+      //Creating a Group object  
+      Group root = new Group(imageView);
+      */ 
    public void draw(GraphicsContext gc)//method to draw the level
    {      
-      for(int i=0; i<10; i++)
+      for(int i=0; i<40; i++)
       {
-         for(int j=0; j<10; j++)
+         for(int j=0; j<40; j++)
          {
             if(level.getData(i,j) == 0)//if value is 0 draw white square at i,j
             {
-               gc.setFill(Color.WHITE);
-               gc.fillRect(j*50.0, i*50.0, 50, 50);  
+               gc.setFill(Color.BLACK);
+               gc.fillRect(j*20.0, i*20.0, 20, 20);  
             }
             if(level.getData(i,j)==1)//if value is 1 draw black square at i,j
             {
-               gc.setFill(Color.BLACK);
-               gc.fillRect(j*50.0, i*50.0, 50, 50);  
+               gc.setFill(Color.WHITE);
+               gc.fillRect(j*20.0, i*20.0, 20, 20);  
             }
+            if(level.getData(i,j)==2)//if value is 2 draw grey square at i,j
+            {
+               gc.setFill(Color.GREY);
+               gc.fillRect(j*20.0, i*20.0, 20, 20);  
+            }
+            if(level.getData(i,j)==12)//if value is 2 draw grey square at i,j
+            {
+               gc.setFill(Color.LIGHTGREY);
+               gc.fillRect(j*20.0, i*20.0, 20, 20);  
+            }
+
+
          }
       }
       
       gc.setFill(Color.YELLOW);
-      gc.fillRect(x, y, 50, 50);
+      gc.fillRect(x, y, 20, 20);
    }
 
    public class KeyHandler implements EventHandler<KeyEvent>
@@ -121,13 +153,13 @@ public class PPCanvas extends Canvas
          {
             y=y+10; //move square down by adding y coordinate by 3
          
-            if(y>450)
+            if(y>800)
             {
                String downCheck = level.nextDown();
             
                if(downCheck.equals("NONE"))
                {
-                  y=450;
+                  y=800;
                }
                /*else
                {
@@ -142,13 +174,13 @@ public class PPCanvas extends Canvas
          {
             x=x+10; //move square down by adding y coordinate by 3
          
-            if(x>450)
+            if(x>800)
             {
                String rightCheck = level.nextRight();
             
                if(rightCheck.equals("NONE"))
                {
-                  x=450;
+                  x=800;
                }
                /*else
                {
