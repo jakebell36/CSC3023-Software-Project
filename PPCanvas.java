@@ -77,7 +77,7 @@ public class PPCanvas extends Canvas
       {
          if(event.getCode() == KeyCode.UP)//if up key is pressed
          {
-            y=y-6; //move square up by subtracting y coordinate by 3
+            y=y-10; //move square up by subtracting y coordinate by 3
          
             if(y<5)
             {
@@ -98,7 +98,7 @@ public class PPCanvas extends Canvas
       
          if(event.getCode() == KeyCode.LEFT)//if left key is pressed
          {
-            x=x-6; //move square left by subtracting x coordinate by 3
+            x=x-10; //move square left by subtracting x coordinate by 3
          
             if(x<5)
             {
@@ -119,7 +119,7 @@ public class PPCanvas extends Canvas
       
          if(event.getCode() == KeyCode.DOWN)//if down key is pressed
          {
-            y=y+6; //move square down by adding y coordinate by 3
+            y=y+10; //move square down by adding y coordinate by 3
          
             if(y>450)
             {
@@ -140,7 +140,7 @@ public class PPCanvas extends Canvas
       
          if(event.getCode() == KeyCode.RIGHT)//if right key is pressed
          {
-            x=x+6; //move square down by adding y coordinate by 3
+            x=x+10; //move square down by adding y coordinate by 3
          
             if(x>450)
             {
